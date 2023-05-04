@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Note App</title>
+    <style>
+        /* Basic styling for the whole page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lightblue;
+            color: #444;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Styling for the page header */
+        header {
+            background-color: #0099cc;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Styling for the page footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Add some basic styling to the notes list */
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            margin: 5px;
+            padding: 5px;
+            border: 1px solid black;
+            color: yellow;
+        }
+        .create-btn {
+            background-color: #4CAF50; 
+            border: none; 
+            color: white; 
+            padding: 10px 20px; 
+            text-align: center; 
+            text-decoration: none; 
+            display: inline-block; 
+            font-size: 16px; 
+            border-radius: 5px; 
+            margin-top: 20px; 
+        }
+    
+        .create-btn:hover {
+            background-color: #3e8e41; /* Darker green background on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; font-family: 'Helvetica', sans-serif; color: #333; text-shadow: 2px 2px #ccc;">Note App DOOD</h1>
+
+    <h2 style="padding-left: 10PX;">Notes</h2>
+
+    <ul>
+        {% for note in notes %}
+        <li>{{ note }} | <a href="{{ url_for('edit', index=loop.index0) }}">Edit</a> | <a href="{{ url_for('delete', index=loop.index0) }}">Delete</a></li>
+        {% endfor %}
+    </ul>
+    <!-- <button class="create-note-button" onclick="window.location.href='{{ url_for('create') }}'">Create Note</button> -->
+    <!-- <a href="{{ url_for('create') }}">Create Note</a> -->
+    <a href="{{ url_for('create') }}" class="create-btn">Create Note</a>
+
+</body>
