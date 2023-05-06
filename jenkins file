@@ -1,0 +1,12 @@
+node
+{
+    stage ('git download')
+    {
+        git 'https://github.com/ram1809/myNoteApp.git'
+    }
+    stage ('maven package')
+    {
+        def mvnHome = toolname:'maven123',type :'maven'
+        sh "${mvnHome}/bin/mvn clean package"
+    }
+}
