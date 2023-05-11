@@ -1,2 +1,3 @@
 FROM tomcat:9.0
-COPY https://github.com/ram1809/myNoteApp.git /usr/local/tomcat/webapps
+WORKDIR /root/myNoteApp
+COPY /root/myNoteApp /usr/local/tomcat/webapps
