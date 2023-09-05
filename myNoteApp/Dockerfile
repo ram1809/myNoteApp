@@ -1,3 +1,3 @@
-FROM tomcat:9.0
-WORKDIR /root/myNoteApp
-COPY /root/myNoteApp /usr/local/tomcat/webapps
+FROM ubuntu
+LABEL Name ="ramganesh"
+ADD https://github.com/ram1809/myNoteApp/tree/master/myNoteApp /root
