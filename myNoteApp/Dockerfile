@@ -1,3 +1,4 @@
+#Base image
 FROM ubuntu
-LABEL Name ="ramganesh"
-ADD https://github.com/ram1809/myNoteApp/tree/master/myNoteApp /root
+#setting up work directory
+WORKDIR /app
