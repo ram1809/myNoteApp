@@ -1,10 +1,17 @@
-#Base image
-FROM ubuntu
-#setting up work directory
+# Base image with Python 3.9
+FROM python:3.9
+
+# Setting up the working directory
 WORKDIR /app
-#copy all files and folders from the host to the docker file system
+
+# Copying all files and folders from the host to the Docker file system
 COPY . /app
-#installing dependencies
-RUN apt-get update && apt-get install -y python3 python3-pip
-RUN apt-get pip install -r requirements.txt
-CMD ["python3", "app.py"]
+
+# Installing dependencies
+# Note: Python 3.9 image comes with pip pre-installed
+RUN pip install --upgrade pip
+RUN pip install --upgrade -r requirements.txt
+
+CMD ["python", "app.py"]
+EXPOSE 80
+
