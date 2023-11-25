@@ -8,7 +8,6 @@ WORKDIR /app
 COPY . /app
 
 # Installing dependencies
-# Note: Python 3.9 image comes with pip pre-installed
 RUN pip install --upgrade pip
 RUN pip install --upgrade -r requirements.txt
 
